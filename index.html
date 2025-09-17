@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="data/data.js"></script>
+    <style>
+        #app {
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*align-items: center;*/
+            /*align-items: stretch;*/
+        }
+
+        tr {
+            line-height: 40px;
+        }
+
+        .table_wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border-collapse: collapse; 
+        }
+
+        td, th {
+            margin: 10px;
+            padding: 10px; 
+        }
+
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .title_area {
+            text-align: center;
+        }
+
+        .img_structure {
+            width: 1000px;
+            max-width: 60vw;
+        }
+
+        .card {
+            text-align: center;
+            margin: 2em;
+            padding: 2em;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .card2 {
+            margin: 2em;
+            padding: 2em;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+        }
+
+        .topper {
+            font-size: small;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+    <div class="title_area">
+        <h1>
+            AlignMark: Speech-Aligned Audio Watermarking Resilient to Neural Transformations and Signal Distortions
+        </h1>
+        <div>
+          anonymous authors
+        </div>
+
+        <!-- <div style="margin-top: 1em">
+            Python Package: <a :href="code_url">{{code_url}}</a>
+        </div> -->
+    </div>
+
+    <div class="card">
+        <h2>Framework Overview</h2>
+        <img class="img_structure" src="./imgs/arch.png">
+        <div style="text-align: left">
+          The rapid advancement of AI generation technologies has raised critical concerns about AI deepfakes and intellectual property 
+          infringement. Audio watermarking techniques offer a promising solution to this risk, but existing methods embed watermarks as 
+          static artifacts in fixed frequency bands, making them vulnerable to neural transformations and signal distortions. To overcome 
+          these limitations, we propose AlignMark, a novel speech-aligned audio watermarking method that dynamically embeds watermarks into 
+          speech content. AlignMark comprises a speech-like watermark generator, a speech-aligned embedder leveraging temporal and spectral 
+          masking, and a feature-pyramid watermark decoder for multi-scale extraction. By aligning watermarks directly with speech content, 
+          AlignMark ensures robustness against attacks that disrupt traditional frequency-based embedding. Extensive experiments on three 
+          datasets and 21 attack scenarios demonstrate that AlignMark achieves state-of-the-art performance, with an average ACC above 0.98,
+           a FAR of 0.05, and imperceptible impact on audio quality, significantly outperforming existing methods in challenging scenarios 
+           such as pitch shifting and neural transformations.
+        </div>
+    </div>
+
+    <div class="card2">
+        <h2>Imperceptibility on Synthetic Data</h2>
+        <div class="table_wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Source Audio</th>
+                    <th>Watermarked Audio</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="i in items">
+                    <td>
+                        <audio controls>
+                            <source :src="'data/'+i.origin" type="audio/wav">
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source :src="'data/'+i.wmd" type="audio/wav">
+                        </audio>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: data_list,
+        },
+        methods: {
+            myToFixed(v) {
+                try {
+                    return v.toFixed(2)
+                } catch (e) {
+                    return v
+                }
+            }
+
+        }
+    })
+</script>
+
+</body>
+</html>
