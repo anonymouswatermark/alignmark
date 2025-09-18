@@ -105,7 +105,14 @@
         <!-- <h2>Framework Overview</h2> -->
         <h2 style="text-align: left;">Method Overview</h2>
         <img class="img_structure" src="./imgs/arch.png">
-
+        <div style="text-align: left">
+            The architecture of AlignMark, shown in Figure 2, includes three components: a speech-like watermark generator, 
+            a speech-aligned watermark embedder, and a watermark decoder. The generatoruses pre-trained speech codec models 
+            to convert watermarks into speech-like audio for natural embedding. The embedder integrates this audio into the 
+            original audio using STFT-based complex spectrograms. The decoder extracts watermarks by combining temporal masking 
+            for speech frame localization with a multi-scale feature pyramid for robust extraction. We jointly train the entire
+            model to align watermarks with speech, preserving audio quality and enhancing robustness.
+          </div>
     </div>
 
     <div class="card2">
