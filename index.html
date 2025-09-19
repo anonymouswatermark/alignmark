@@ -81,10 +81,21 @@
             Python Package: <a :href="code_url">{{code_url}}</a>
         </div> -->
     </div>
-
-    <div class="d-flex justify-content-center gap-3 mb-4"></div>
-        <a href="https://anonymouswatermark.github.io/alignmark/" class="btn btn-light" style="border: 1px solid #dee2e6;">
-            <i class="fas fa-file-alt text-primary me-2"></i>github repo
+    
+    <div style="display: grid; place-items: center; margin-top: 1em;">
+        <a href="https://anonymouswatermark.github.io/alignmark/" style="text-decoration: none;">
+            <button style="
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+                <i class="fas fa-file-alt"></i> GitHub Repo
+            </button>
         </a>
     </div>
     
