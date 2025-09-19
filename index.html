@@ -84,7 +84,7 @@
 
     
     <div class="card">
-        <h2 style="text-align: left;">TL;DR (Summary)</h2>
+        <h2 style="text-align: left;">Summary</h2>
         <img class="img_structure" src="./imgs/fig1.png">
 
         <h2 style="text-align: left;">Abstract</h2>
@@ -122,12 +122,14 @@
             <table>
                 <thead>
                 <tr>
+                    <th>Dataset</th>
                     <th>Source Audio</th>
                     <th>Watermarked Audio</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="i in items">
+                    <td>{{i.dataset}}</td>
                     <td>
                         <audio controls>
                             <source :src="'data/'+i.origin" type="audio/wav">
