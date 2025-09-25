@@ -103,5 +103,59 @@ const data_list = [
     "wmd": "demo/ljspeech/ours/ljspeech_LJ049-0117_watermarked.wav",
 },
 
+// dataset3
+
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p229_131_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p229_131_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p230_072_mic2.wav",
+    "wmd": "demo/vctk/ours/vctk_p230_072_mic2_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p231_431_mic2.wav",
+    "wmd": "demo/vctk/ours/vctk_p231_431_mic2_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p255_097_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p255_097_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p278_230_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p278_230_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p294_013_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p294_013_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p299_218_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p299_218_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p305_037_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p305_037_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p360_423_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p360_423_mic1_watermarked.wav",
+},
+{
+    "dataset": "vctk",
+    "origin": "demo/vctk/gt/vctk_p361_224_mic1.wav",
+    "wmd": "demo/vctk/ours/vctk_p361_224_mic1_watermarked.wav",
+},
+
+
 
 ]
