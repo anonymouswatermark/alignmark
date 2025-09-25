@@ -105,16 +105,14 @@
 
         <h2 style="text-align: left;">Abstract</h2>
         <div style="text-align: left">
-            The rapid advancement of AI generation technologies has raised critical concerns about AI deepfakes and intellectual property 
-            infringement. Audio watermarking techniques offer a promising solution to this risk, but existing methods embed watermarks as 
-            static artifacts in fixed frequency bands, making them vulnerable to neural transformations and signal distortions. To overcome 
-            these limitations, we propose AlignMark, a novel speech-aligned audio watermarking method that dynamically embeds watermarks into 
-            speech content. AlignMark comprises a speech-like watermark generator, a speech-aligned embedder leveraging temporal and spectral 
-            masking, and a feature-pyramid watermark decoder for multi-scale extraction. By aligning watermarks directly with speech content, 
-            AlignMark ensures robustness against attacks that disrupt traditional frequency-based embedding. Extensive experiments on three 
-            datasets and 21 attack scenarios demonstrate that AlignMark achieves state-of-the-art performance, with an average ACC above 0.98,
-             a FAR of 0.05, and imperceptible impact on audio quality, significantly outperforming existing methods in challenging scenarios 
-             such as pitch shifting and neural transformations.
+            Audio watermarking, which embeds identity information into audio for authenticity verification, is an effective approach to protecting the intellectual property of audio content creators. 
+            A key unresolved challenge in audio watermarking is the limited robustness of existing methods under real-world neural transformations, such as denoising, codec, and vocoder reconstruction, 
+            which can render watermarks removable or undetectable. To better understand this challenge, we introduce the content alignment degree (CAD) metric, which quantifies the extent to which watermarks 
+            are integrated into audio, and observe a positive correlation between CAD and watermark robustness. Guided by CAD, we propose AlignMark, a content-aligned audio watermarking method that leverages 
+            spectral masking in the embedder, temporal masking in the decoder, and multiple perceptual losses to explicitly align watermark embedding with audio content and improve robustness against diverse 
+            attacks while preserving perceptual quality. Furthermore, a feature pyramid-based decoder extracts watermarks across multiple scales, enhancing reliability under pitch shifts and spectral 
+            distortions. Extensive experiments on multiple datasets and 21 attack scenarios demonstrate that AlignMark achieves state-of-the-art performance, with an average bit-wise accuracy of 0.98 
+            and false attribution rate of 0.05, while maintaining imperceptible impact on audio quality.
           </div>
         <!-- <img class="img_structure" src="./imgs/arch.png"> -->
 
@@ -122,16 +120,12 @@
         <h2 style="text-align: left;">Method Overview</h2>
         <img class="img_structure" src="./imgs/Fig2_new.png">
         <div style="text-align: left">
-            The architecture of AlignMark, shown in Figure 2, includes three components: a speech-like watermark generator, 
-            a speech-aligned watermark embedder, and a watermark decoder. The generatoruses pre-trained speech codec models 
-            to convert watermarks into speech-like audio for natural embedding. The embedder integrates this audio into the 
-            original audio using STFT-based complex spectrograms. The decoder extracts watermarks by combining temporal masking 
-            for speech frame localization with a multi-scale feature pyramid for robust extraction. We jointly train the entire
-            model to align watermarks with speech, preserving audio quality and enhancing robustness.
+            The architecture of AlignMark, shown in Figure~\ref{fig:architecture}, includes a watermark embedder and a watermark decoder. 
+            Spectral and temporal masking are jointly trained to support content-aligned watermarking.
         </div>
-
+<!-- 
         <h2 style="text-align: left;">Visual comparison</h2>
-        <img class="img_structure" src="./imgs/fig5.png">
+        <img class="img_structure" src="./imgs/fig5.png"> -->
 
     </div>
 
