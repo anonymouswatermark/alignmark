@@ -5,8 +5,6 @@
     <title>Demo</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="data/data.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML" id="MathJax-script" async></script>
     <style>
         #app {
             /*display: flex;*/
@@ -73,7 +71,7 @@
 <div id="app">
     <div class="title_area">
         <h1>
-            AlignMark: Speech-Aligned Audio Watermarking Resilient to Neural Transformations and Signal Distortions
+            AlignMark: Content-Aligned Audio Watermarking for Robustness Against Neural Transformations
         </h1>
         <div>
           anonymous authors
@@ -125,13 +123,9 @@
             The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. 
             Spectral and temporal masking are jointly trained to support content-aligned watermarking.
             The watermark embedder comprises a frozen codec model with the quantization layer removed, an adapter 
-            <span class="math-inline">
-                $\mathcal{A}$
-            </span>
+            <span class="math-inline">&#119965;</span>
             , and an integrator 
-            <span class="math-inline">
-                $\mathcal{I}$
-            </span>
+            <span class="math-inline">&#119973;</span>
             .
         </div>
 
