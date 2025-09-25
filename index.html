@@ -5,6 +5,9 @@
     <title>Demo</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="data/data.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-nK8oJ9Z4t0O4L7U9pD7OQ6P5z2I7Zt7YxJ7M6p8R4F4W5C2D9E8F4V6S0E3Z8S7K" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" integrity="sha384-A6A+h+F7Jz5m1Ym3W2Q9V4v4P7Zt7M6p8R4F4W5C2D9E8F4V6S0E3Z8S7K" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" integrity="sha384-p4g6G8W3F3t/7fFv9R4W2F3D9T7N7Y5C2D9E8F4V6S0E3Z8S7K" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
     <style>
         #app {
             /*display: flex;*/
@@ -123,9 +126,9 @@
             The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. 
             Spectral and temporal masking are jointly trained to support content-aligned watermarking.
             The watermark embedder comprises a frozen codec model with the quantization layer removed, an adapter 
-            <span class="math-inline">&#119965;</span>
+            <span class="math-inline">$\mathcal{A}$</span>
             , and an integrator 
-            <span class="math-inline">&#119973;</span>
+            <span class="math-inline">$\mathcal{I}$</span>
             .
         </div>
 
