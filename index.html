@@ -133,17 +133,16 @@
         <h2 style="text-align: left;">Method Overview</h2>
         <img class="img_structure" src="./imgs/Fig2_new.png">
         <div style="text-align: left">
-            The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. 
+            The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. Spectral and temporal masking are jointly trained to support content-aligned watermarking.
             <ol>
                 <li>            
-                    Spectral and temporal masking are jointly trained to support content-aligned watermarking.
-                    The watermark embedder comprises a frozen codec model with the quantization layer removed, an adapter 
+                    The watermark embedder: comprises a frozen codec model with the quantization layer removed, an adapter 
                     <span class="math-inline">$\mathcal{A}$</span>
                     , and an integrator 
                     <span class="math-inline">$\mathcal{I}$</span>
                     .
                 </li>
-                <li>The watermark decoder consists of a detector for predicting the temporal mask and an extractor for 
+                <li>The watermark decoder: consists of a detector for predicting the temporal mask and an extractor for 
                     capturing feature pyramids. The temporal mask is used to filter voiced frames from the feature pyramids, 
                     which are then utilized to decode the watermark.
                 </li>
