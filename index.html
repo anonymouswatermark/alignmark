@@ -122,10 +122,22 @@
         <div style="text-align: left">
             The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. 
             Spectral and temporal masking are jointly trained to support content-aligned watermarking.
+            The watermark embedder comprises a frozen codec model with the quantization layer removed, an adapter 
+            <span class="math-inline">
+                $\mathcal{A}$
+            </span>
+            , and an integrator 
+            <span class="math-inline">
+                $\mathcal{I}$
+            </span>
+            .
         </div>
-<!-- 
-        <h2 style="text-align: left;">Visual comparison</h2>
-        <img class="img_structure" src="./imgs/fig5.png"> -->
+
+        <h2 style="text-align: left;">Robustness comparison of decoding bit-wise accuracy</h2>
+        <img class="img_structure" src="./imgs/radar_pic.png">
+        <div style="text-align: left">
+            Robustness comparison of decoding bit-wise accuracy across various attacks against state-of-the-art watermarking methods.
+        </div>
 
     </div>
 
