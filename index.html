@@ -65,6 +65,23 @@
             font-size: small;
         }
 
+        .horizontal-container {
+            display: flex; 
+            width: 100%; 
+            gap: 20px; 
+        }
+        
+        .horizontal-container .img_left {
+            width:65%; 
+            height: auto; 
+            box-sizing: border-box; 
+        }
+
+        .horizontal-container .img_right {
+            width: 35%; 
+            height: auto; 
+            box-sizing: border-box; 
+        }
     </style>
 
 </head>
@@ -114,10 +131,15 @@
     
     <div class="card">
         <h2 style="text-align: left;">Summary</h2>
-        <img class="img_structure" src="./imgs/Fig1_new.png">
+        <!-- <img class="img_structure" src="./imgs/Fig1_new.png">
+          -->
+        <div class="horizontal-container">
+            <img class="img_left" src="./imgs/Fig1_new.png" >
+            <img class="img_right" src="./imgs/radar_pic_new.png">
+        </div>
 
         <h2 style="text-align: left;">Abstract</h2>
-        <div style="text-align: left">
+        <div style="text-align: left; font-size: 22px;">
             Audio watermarking, which embeds identity information into audio for authenticity verification, is an effective approach to protecting the intellectual property of audio content creators. 
             A key unresolved challenge in audio watermarking is the limited robustness of existing methods under real-world neural transformations, such as denoising, codec, and vocoder reconstruction, 
             which can render watermarks removable or undetectable. To better understand this challenge, we introduce the content alignment degree (CAD) metric, which quantifies the extent to which watermarks 
@@ -132,29 +154,21 @@
         <!-- <h2>Framework Overview</h2> -->
         <h2 style="text-align: left;">Method Overview</h2>
         <img class="img_structure" src="./imgs/Fig2_new.png">
-        <div style="text-align: left">
-            The architecture of AlignMark, shown in Figure 2, includes a watermark embedder and a watermark decoder. Spectral and temporal masking are jointly trained to support content-aligned watermarking.
-            <ol>
+        <div style="text-align: left; font-size: 22px;">
+            AlignMark consists of a watermark embedder and decoder, jointly trained with spectral and temporal masking to align watermark embedding with audio content.
+            <ul>
                 <li>            
-                    The watermark embedder: comprises a frozen codec model with the quantization layer removed, an adapter 
-                    <span class="math-inline">$\mathcal{A}$</span>
-                    , and an integrator 
-                    <span class="math-inline">$\mathcal{I}$</span>
-                    .
+                    <strong>Embedder</strong>: The embedder integrates watermarks into speech latents using a frozen codec model with an adapter and integrator. Perceptual and VAD-based losses constrain embedding to audio content regions.
                 </li>
-                <li>The watermark decoder: consists of a detector for predicting the temporal mask and an extractor for 
-                    capturing feature pyramids. The temporal mask is used to filter voiced frames from the feature pyramids, 
-                    which are then utilized to decode the watermark.
+                <li>
+                    <strong>Decoder</strong>: The decoder combines feature pyramid extraction and temporal mask prediction to recover watermarks from attacked audio, supported by differentiable augmentations for robustness.
                 </li>
-            </ol>
+                <li>
+                    <strong>Training Loss</strong>: Multiple perceptual losses—including speaker similarity, latent cosine, loudness, and decoding loss—regularize training, balancing robustness and perceptual quality.
+                </li>
+            </ul>
 
         </div>
-
-        <h2 style="text-align: left;">Robustness comparison of decoding bit-wise accuracy</h2>
-        <img class="img_structure" src="./imgs/radar_pic.png">
-        <!-- <div style="text-align: left">
-            Robustness comparison of decoding bit-wise accuracy across various attacks against state-of-the-art watermarking methods.
-        </div> -->
 
     </div>
 
